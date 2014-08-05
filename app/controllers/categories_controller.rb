@@ -27,8 +27,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    category = find_category
-    category.destroy
+    find_category.destroy
     redirect_to categories_path
   end
 
