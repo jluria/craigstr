@@ -10,6 +10,6 @@ class Region < ActiveRecord::Base
   private
 
   def parameterize_name
-    name = name.parameterize
+    name.parameterize
   end
 end
