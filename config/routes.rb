@@ -1,4 +1,5 @@
 require "monban/constraints/signed_in"
+require "monban/constraints/signed_out"
 
 Rails.application.routes.draw do
   constraints Monban::Constraints::SignedIn.new do
@@ -15,7 +16,5 @@ Rails.application.routes.draw do
   resources :regions
   resources :categories
   resource :dashboard, only: [:show]
-
-  root "homes#show"
 
 end
