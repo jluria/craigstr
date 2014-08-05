@@ -4,8 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.new(category_params)
-    category.save
+    category = Category.create(category_params)
     redirect_to category
   end
 
