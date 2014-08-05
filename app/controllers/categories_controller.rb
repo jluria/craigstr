@@ -4,13 +4,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Catergory.new(category_params)
+    category = Category.new(category_params)
     category.save
-    redirect to category_path
+    redirect_to category
   end
 
   def index
-    @categories = Catergory.all
+    @categories = Category.all
   end
 
   def show
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   def destroy
     category = find_category
     category.destroy
-    redirect_to category_path
+    redirect_to categories_path
   end
 
   private
