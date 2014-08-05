@@ -1,0 +1,9 @@
+<div>
+  <% if current_user.admin? %>
+    <%= link_to "New Region", new_region_path %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "List Regions", regions_path %>
+</div>
