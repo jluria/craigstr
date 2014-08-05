@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   resources :regions
-
+  resources :categories
   resource :dashboard, only: [:show]
 
   root "homes#show"
