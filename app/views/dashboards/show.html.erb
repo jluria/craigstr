@@ -1,9 +1,11 @@
 <div>
   <% if current_user.admin? %>
     <%= link_to "New Region", new_region_path %>
+    <%= link_to "New Category", new_category_path %>
   <% end %>
 </div>
 
 <div>
   <%= link_to "List Regions", regions_path %>
+  <%= link_to "List Categories", categories_path %>
 </div>
