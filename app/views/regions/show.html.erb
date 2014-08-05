@@ -1,7 +1,7 @@
 <h1><%= @region.name %></h1>
 <div>
-  <% if current_user.admin = true %>
+  <% if current_user.admin? %>
     <%= link_to "Edit Region", edit_region_path(@region) %>
-    <%= link_to "Delete Region", region_path(@region), method: :delete %>
+    <%= link_to "Delete Region", @region, method: :delete %>
   <% end %>
 </div>
