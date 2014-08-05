@@ -1,5 +1,5 @@
 <div>
-  <% if current_user.admin == true %>
+  <% if current_user.admin? %>
     <%= link_to "New Region", new_region_path %>
   <% end %>
 </div>
