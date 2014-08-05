@@ -2,7 +2,7 @@
 <div>
   <% if current_user.admin? %>
     <%= link_to "Edit Catergory", edit_category_path(@category) %>
-    <%= link_to "Delete Catergory", category_path(@category), method: :delete %>
+    <%= link_to "Delete Catergory", @category, method: :delete %>
   <% end %>
 </div>
 
