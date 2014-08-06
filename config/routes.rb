@@ -12,9 +12,10 @@ Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :posts, only: [:create, :edit, :update]
   resources :regions do
-    resources :categories, only: [:show]
+    resources :categories, only: [:show] do
+      resources :posts, only: [:new, :create, :edit, :update, :show]
+    end
   end
 
   resources :categories, except: [:show]
