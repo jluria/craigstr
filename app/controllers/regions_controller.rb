@@ -36,7 +36,7 @@ class RegionsController < ApplicationController
   private
 
   def find_region
-    Region.find_by(name: params[:id])
+    Region.find_by(slug: params[:id])
   end
 
   def region_params
