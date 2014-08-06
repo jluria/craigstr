@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
 
   def create
-    post = Post.new(post_params)
-    post.user = current_user
+    post = current_user.posts.new(post_params)
     post.save
     redirect_to dashboard_path
   end
@@ -13,7 +12,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params) #we are calling the method below in the private section
+    if @post.update(post_params)
       redirect_to dashboard_path
     else
       render:edit
@@ -23,7 +22,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-        params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content)
   end
 
 end
