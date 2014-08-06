@@ -14,15 +14,15 @@
     <%= form.text_field :title %>
   </div>
   <div>
-  	<%= form.label :content %>
-  	<%= form.text_area :content %>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
   </div>
   <div>
-  	<%= form.submit "Submit Post" %>
+    <%= form.submit "Submit Post" %>
   </div>
 <% end %>
 
 <div>
-	<%= render(current_user.posts) %>
+  <%= render(current_user.posts) %>
 </div>
 
