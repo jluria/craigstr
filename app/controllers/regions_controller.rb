@@ -1,4 +1,6 @@
 class RegionsController < ApplicationController
+  before_filter :verify_admin, except: [:index, :show]
+
   def new
     @region = Region.new
   end
