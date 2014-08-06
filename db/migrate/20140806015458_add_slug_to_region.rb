@@ -4,7 +4,6 @@ class AddSlugToRegion < ActiveRecord::Migration
   end
 
   def change
-
     add_column :regions, :slug, :string, index: true
 
     Region.all.each do |region|
