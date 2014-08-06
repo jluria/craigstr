@@ -6,4 +6,14 @@
   <% end %>
 </div>
 
-<%= render @categories %>
+<% @categories.each do |category| %>
+  <ul>
+    <li><%= category.name %></li>
+  </ul>
+  <div>
+    <% if current_user.admin? %>
+      <%= link_to "Edit Category", edit_category_path(category) %>
+      <%= link_to "Delete Category", category, method: :delete %>
+    <% end %>
+  </div>
+<% end %>

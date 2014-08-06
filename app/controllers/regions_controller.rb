@@ -15,6 +15,7 @@ class RegionsController < ApplicationController
 
   def show
     @region = find_region
+    @categories = Category.all
   end
 
   def edit

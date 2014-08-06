@@ -1,9 +1,3 @@
 <h1><%= @category.name %></h1>
 
-<div>
-  <% if current_user.admin? %>
-    <%= link_to "Edit Catergory", edit_category_path(@category) %>
-    <%= link_to "Delete Catergory", @category, method: :delete %>
-  <% end %>
-</div>
 
