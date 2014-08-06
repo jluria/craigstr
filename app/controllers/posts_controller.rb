@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     if post.update(post_params)
       redirect_to [post.region, post.category, post]
     else
-      render:edit
+      render :edit
     end
   end
 
