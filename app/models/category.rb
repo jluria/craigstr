@@ -1,15 +1,23 @@
 class Category < ActiveRecord::Base
   validates :name, uniqueness: true, presence: true 
-
-  before_create :parameterize_name
+  after_create :generate_slug
+  before_update :assign_slug
 
   def to_param
-    name
+    slug
   end
 
   private
 
-  def parameterize_name
+  def assign_slug
+    self.slug = to_slug
+  end
+
+  def generate_slug
+    update_attributes(slug: to_slug)
+  end
+
+  def to_slug
     name.parameterize
   end
 end
