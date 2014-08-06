@@ -1,15 +1,14 @@
 class Category < ActiveRecord::Base
   validates :name, uniqueness: true, presence: true 
-
-  before_create :parameterize_name
+  after_create :to_slug
 
   def to_param
-    name
+    slug
   end
 
   private
 
-  def parameterize_name
-    name.parameterize
+  def to_slug
+   slug = name.parameterize
   end
 end
