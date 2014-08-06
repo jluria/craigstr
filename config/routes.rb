@@ -13,8 +13,12 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
 
-  resources :regions
-  resources :categories
+  resources :regions do
+    resources :categories, only: [:show]
+  end
+
+  resources :categories, except: [:show]
+
   resource :dashboard, only: [:show]
 
 end

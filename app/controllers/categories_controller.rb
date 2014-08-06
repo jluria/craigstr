@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    category = Category.create(category_params)
-    redirect_to category
+    Category.create(category_params)
+    redirect_to categories_path
   end
 
   def index
@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @region = find_region
     @category = find_category
   end
 
@@ -23,7 +24,7 @@ class CategoriesController < ApplicationController
   def update
     category = find_category
     category.update(category_params)
-    redirect_to category
+    redirect_to categories_path
   end
 
   def destroy
@@ -32,6 +33,10 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+  def find_region
+    Region.find_by(name: params[:region_id])
+  end
 
   def find_category
     Category.find_by(name: params[:id])

@@ -5,3 +5,5 @@
     <%= link_to "Delete Region", @region, method: :delete %>
   <% end %>
 </div>
+
+<%= render @categories, region: @region %>
