@@ -1,1 +1,8 @@
 <%= render @post %>
+<div class="spam">
+  <% if current_user.flagged(@post) %>
+    <%= link_to "Unflag as Spam", unspam_region_category_post_path(@post.region, @post.category, @post), method: :delete %>
+  <% else %>
+    <%= link_to "Flag as Spam", spam_region_category_post_path(@post.region, @post.category, @post), method: :post %>
+  <% end %>
+</div>

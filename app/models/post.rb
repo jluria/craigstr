@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
   belongs_to :region
   belongs_to :category
+  has_many :spam
 end
