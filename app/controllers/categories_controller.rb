@@ -17,6 +17,7 @@ class CategoriesController < ApplicationController
   def show
     @region = find_region
     @category = find_category
+    @posts = Post.where(region: @region, category: @category)
   end
 
   def edit

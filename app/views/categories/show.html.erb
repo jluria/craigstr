@@ -1,6 +1,6 @@
 <h1><%= @category.name %></h1>
 
-<% @category.posts.each do |post| %>
+<% @posts.each do |post| %>
   <div>
     <%= link_to post.title, [post.region, post.category, post] %>
     <%= time_ago_in_words(post.created_at) %>
