@@ -2,7 +2,7 @@
 
 <% @category.posts.each do |post| %>
   <div>
-    <% link_to "#{post.title}", post %>
+    <% link_to post.title, post %>
     <%= time_ago_in_words(post.created_at) %>
   </div>
 <% end %>
