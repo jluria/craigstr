@@ -37,7 +37,7 @@ class CategoriesController < ApplicationController
   private
 
   def find_region
-    Region.find_by(name: params[:region_id])
+    Region.find_by(slug: params[:region_id])
   end
 
   def find_category
