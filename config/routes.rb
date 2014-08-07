@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       resources :posts, only: [:new, :create, :edit, :update, :show] do
         member do
           post "spam" => "spams#create", as: "spam"
-          delete "spam" => "spams#destroy", as: "unspam"
         end
       end
     end
