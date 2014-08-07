@@ -4,10 +4,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
 
-<<<<<<< HEAD
   def not_flagged_as_spam?(post)
     spams.where(post: post).empty?
-=======
+  end
+
   def can_change?(post)
     admin? || posted?(post)
   end
@@ -16,6 +16,5 @@ class User < ActiveRecord::Base
   
   def posted?(post)
     post.user_id == id
->>>>>>> aa-admin-delete
   end
 end
