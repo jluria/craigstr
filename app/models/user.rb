@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
 
   def posted?(post)
-    posts.include?(post)
+    post.user_id == id 
   end
 end
