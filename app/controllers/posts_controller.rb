@@ -32,6 +32,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def find_category
