@@ -5,9 +5,9 @@
   <h3>
     <%= post.content %>
   </h3>
-  <% if current_user.admin? || current_user.posted?(@post) %>
+  <% if current_user.can_change?(post) %>
   <%= link_to "Edit Post", edit_region_category_post_path(post.region, post.category, post) %>
-    <%= link_to "Delete Post", [post.region, post.category, post], method: :delete, data: { confirm: "Are you sure?" } %>
+  <%= link_to "Delete Post", [post.region, post.category, post], method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </div>
 <% end %>
