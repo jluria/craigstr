@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   end
 
   private
-  
+
   def posted?(post)
     post.user_id == id
   end
