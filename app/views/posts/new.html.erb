@@ -1,4 +1,7 @@
 <%= form_for [@region, @category, @post] do |form| %>
   <%= render form %>
+  <%= form.file_field :image %>
   <%= form.submit %>
 <% end %>
+
+

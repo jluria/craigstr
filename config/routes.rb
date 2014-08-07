@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :regions do
     resources :categories, only: [:show] do
-      resources :posts, only: [:new, :create, :edit, :update, :show] do
+      resources :posts, only: [:new, :create, :edit, :update, :show, :destroy] do
         member do
           post "spam" => "spams#create", as: "spam"
         end

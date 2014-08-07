@@ -5,7 +5,10 @@
   <h3>
     <%= post.content %>
   </h3>
+  <div>
+    <%= image_tag post.image.url %>
+  </div>
     <%= link_to "Edit Post", edit_region_category_post_path(post.region, post.category, post) %>
-    <%= link_to "Delete Post", post_path(post), method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to "Delete Post", [post.region, post.category, post], method: :delete, data: { confirm: "Are you sure?" } %>
 </div>
 <% end %>
