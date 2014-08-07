@@ -1,6 +1,6 @@
 <%= render @post %>
 <div class="spam">
-  <% if current_user.not_flagged(@post) %>
+  <% if current_user.not_flagged_as_spam?(@post) %>
     <%= link_to "Flag as Spam", spam_region_category_post_path(@post.region, @post.category, @post), method: :post, data: { confirm: "Are You 100%, Completely, Absolutely, Totally, Positively, Sure?"} %>
   <% end %>
 </div>
