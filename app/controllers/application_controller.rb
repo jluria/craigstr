@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def current_user
+    warden.user || NullUser.new
+  end
 end
