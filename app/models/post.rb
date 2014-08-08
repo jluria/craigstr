@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  paginates_per 20
   has_attached_file :image,
   styles: { medium: "300x300>", thumb: "100x100>" },
   default_url: "logo.png"
@@ -9,6 +10,6 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
   belongs_to :region
-  belongs_to :category  
+  belongs_to :category
   has_many :spam
 end

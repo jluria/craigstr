@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
 
+gem 'kaminari'
 gem "paperclip", "~> 4.1"
 gem 'monban', '~> 0.1.1'
 gem 'pg'
