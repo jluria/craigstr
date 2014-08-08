@@ -1,3 +1,4 @@
+ruby '2.1.2'
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
@@ -17,4 +18,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :development do
   gem 'monban-generators', '~> 0.0.3'
   gem 'spring'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
