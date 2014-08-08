@@ -17,3 +17,11 @@
 <div>
   <%= render(current_user.posts) %>
 </div>
+
+<% if current_user.admin? %>
+  <h1>Spam</h1>
+
+  <% @spam.each do |spam| %>
+    <%= link_to spam.post.title, [spam.post.region, spam.post.category, spam.post] %>
+  <% end %>
+<% end %>
