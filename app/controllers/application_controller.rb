@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    warden.user || NullUser.new
+    super || NullUser.new
   end
 end
